@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import { useAppDispatch, useAppSelector } from './app/hooks';
+import animation from './assets/coworking-male-programmer-writing-program-code.gif';
+import { increment } from './features/counter/counterSlice';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const count = useAppSelector((state) => state.counter.value);
+  const dispatch = useAppDispatch();
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="responsive-fit">
+        <div>
+          <img src={animation} className="animation react" alt="React logo" />
+        </div>
+        <div>
+          <h1>Redux Counter</h1>
+          <div className="card">
+            <button onClick={() => dispatch(increment())}>
+              count is {count}
+            </button>
+            <p className="main-message">
+              Simple redux excercise using counter. <br /> Find more at:{' '}
+              <a href="https://www.alura.com.br/artigos/redux-desvendando-arquitetura-flux">
+                Redux: desvendando a arquitetura com Flux
+              </a>
+            </p>
+          </div>
+          <p className="read-the-docs">
+            Illustration by{' '}
+            <a href="https://icons8.com/illustrations/author/HxMFjfKZdNq2">
+              Rosina Gavrilash
+            </a>{' '}
+            from <a href="https://icons8.com/illustrations">Ouch!</a>
+          </p>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

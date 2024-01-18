@@ -5,19 +5,6 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -33,10 +20,50 @@
   }
 }
 
+.animation {
+  height: 16em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+@media (min-width: 1000px) {
+  .responsive-fit {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+  .animation {
+    height: 32em;
+    padding: 1.5em;
+  }
+}
+
+.animation.react:hover {
+  filter: drop-shadow(0 0 2em #dc61fbaa);
+}
+
+.responsive-fit {
+  /* display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column-reverse; */
+}
+
 .card {
   padding: 2em;
 }
 
+.main-message {
+  margin: 32px auto 16px;
+}
+
 .read-the-docs {
+  text-align: center;
   color: #888;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
