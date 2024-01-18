@@ -21,8 +21,8 @@ function App() {
             </button>
             <p className="main-message">
               Simple redux excercise using counter. <br /> Find more at:{' '}
-              <a href="https://www.alura.com.br/artigos/redux-desvendando-arquitetura-flux">
-                Redux: desvendando a arquitetura com Flux
+              <a href="https://redux-toolkit.js.org/tutorials/typescript">
+                Redux Toolkit TypeScript Quick Start
               </a>
             </p>
           </div>
